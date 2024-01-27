@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav > a {
+  text-decoration: none;
+  color: lavender;
+  padding: 0 1em;
+  min-width: 6em;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+nav > a:hover {
+  background-color: lavender;
+  color: indigo;
+}
+
+nav > .active {
+  background-color: white;
+  color: indigo;
+}
