@@ -1,0 +1,30 @@
+.filter-checkboxes {
+  justify-content: flex-start;
+  flex-direction: column;
+  /* margin-top: 1em; */
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.filter-checkbox > * {
+  cursor: pointer;
+}
+
+.filter-checkbox > input {
+  width: 1em;
+  height: 1em;
+  align-self: self-end;
+  accent-color: indigo;
+}
+
+.filter-checkbox > label {
+  display: block;
+  padding-left: 0.5em;
+  white-space: nowrap;
+  min-width: 6em;
+  /* width: 100%; */
+  align-self: flex-start;
+}

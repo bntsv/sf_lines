@@ -3,19 +3,19 @@ import './lines-list.component.css';
 import { Link } from 'react-router-dom';
 import { selectLine } from '../../features/lines/linesSlice';
 
-// const lineTypeMap = {
-//     A: 'Bus',
-//     TB: 'Trolley bus',
-//     TM: 'Tram'
-// }
-
 function LinesList() {
-  const {lines} = useSelector((store) => store.lines);
+  const { lines, linesFilter } = useSelector((store) => store.lines);
+  console.log(lines);
   const dispatch = useDispatch();
+
+  
+  const filteredLines = linesFilter.length === 0
+    ? lines
+    : lines.filter((l) => linesFilter.includes(l.routes[0].transportType));
 
   return (
     <ul className='lines'>
-        {lines.length && lines.map((l) => {
+        {filteredLines.length && filteredLines.map((l) => {
             const line = l.line;
             return (
                 <li key={line} onClick={() => {

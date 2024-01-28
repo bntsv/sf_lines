@@ -1,12 +1,11 @@
-import { useSelector } from "react-redux";
+import LineMap from "../../components/lines-map/line-map.component";
+import LineDetails from "../../components/line-details/line-details.component";
 
 function SingleLine() {
-  const { selectedLine } = useSelector((store) => store.lines);
-
   return (
     <>
-        <h2>Single line: {selectedLine?.line}</h2>
-        <h2>MapComponent</h2>
+      <LineDetails/>
+      <LineMap/>
     </>
   );
 }

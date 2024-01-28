@@ -1,15 +1,14 @@
 .lines {
-  border: solid 1px indigo;
-  box-sizing: border-box;
-  margin: 1em;
-  padding: 1em;
-  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+  min-height: 12em;
 }
 
 .lines a {
   display: block;
   text-decoration: none;
+  padding: 0.5em;
 }
 
 .lines a:hover {

@@ -1,10 +1,11 @@
-import LinesList from '../../components/lines-list/lines-list.component';
+import LineMap from "../../components/lines-map/line-map.component";
+import LinesPanel from "../../components/lines-panel/lines-panel.component";
 
 function Home() {
   return (
     <>
-        <LinesList/>
-        <h2>MapComponent</h2>
+      <LinesPanel/>
+      <LineMap/>
     </>
   );
 }
