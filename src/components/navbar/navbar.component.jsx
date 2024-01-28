@@ -3,7 +3,7 @@ import './navbar.component.css';
 import { NavLink, useLocation } from 'react-router-dom';
 
 function Navbar() {
-  const {selectedLine} = useSelector((store) => store.lines);
+  const { selectedLine } = useSelector((store) => store.lines);
   const pathname = useLocation();
   const line = selectedLine?.line
 

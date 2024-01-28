@@ -1,26 +1,31 @@
 import { useLocation, Navigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectLine } from '../features/lines/linesSlice';
+import { fetchLineData } from '../features/lines/linesSlice';
+import { useEffect, useState } from 'react';
 
 // if the user types a line directly in url 
 // the line should be displayed if existing
 // if not, user should be redirected to all lines view
+// a path of /(name of line) should redirect to the line page correctly 
+// in a freshly open browser and to the all lines page if the line doesn't exist in the data
 export default function Authenticated({ children }) {
-  const { selectedLine, lines } = useSelector((store) => store.lines);
+  const { selectedLine } = useSelector((store) => store.lines);
+  const [ selected, setSelected ] = useState({})
   const dispatch = useDispatch();
   const location = useLocation();
   const params = useParams();
 
-  if (!selectedLine) {
-    const line = lines.find((l)=>l.line === params.line);
-    
-    if(line) {
-      dispatch(selectLine(line));
-      return children;
+  useEffect(()=>{
+    if(!selectedLine){
+      // console.log('fetch line data from auth...');
+
+      dispatch(fetchLineData(params.line));
     }
 
-    return <Navigate to="/" state={{ from: location.pathname }} />;
-  }
+    setSelected(selectedLine);
+  }, [selectedLine])
 
-  return children;
+
+
+  return selected? children : <Navigate to="/" state={{ from: location.pathname }} />;
 }
