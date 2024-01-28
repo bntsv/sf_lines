@@ -5,7 +5,6 @@ import { selectLine } from '../../features/lines/linesSlice';
 
 function LinesList() {
   const { lines, linesFilter } = useSelector((store) => store.lines);
-  console.log(lines);
   const dispatch = useDispatch();
 
   

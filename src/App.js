@@ -6,20 +6,25 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './views/home/home.view';
 import SingleLine from './views/single-line/single-line.view';
 import Authenticated from './hoc/Authenticated';
+import { useDispatch } from 'react-redux';
+import { fetchLinesData } from './features/lines/linesSlice';
 
 function App() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await getLinesData();
+    // async function fetchData() {
+    //   const response = await getLinesData();
 
-      if (!data.length) {
-        setData(response);
-      }
-    }
+    //   if (!data.length) {
+    //     setData(response);
+    //   }
+    // }
 
-    fetchData();
+    // fetchData();
+
+    dispatch(fetchLinesData());
   }, []);
 
   return (
