@@ -8,8 +8,10 @@ const initialState = {
   lines: [],
   selectedLine: null,
   linesFilter: [],
+  selectedRoute: null,
   isLoading: false,
   error: false
+  // getDefaultSelectedRoute: () => this.selectedLine?.routes[0]
 };
 
 export const fetchLinesData = createAsyncThunk('lines/fetchLinesData', async () => {
@@ -33,6 +35,9 @@ const linesSlice = createSlice({
     },
     updateFilter: (state, action) => {
       state.linesFilter = action.payload;
+    },
+    selectRoute: (state, action) => {
+      state.selectedRoute = action.payload;
     }
   },
   extraReducers: (builder) => {
@@ -71,6 +76,6 @@ const linesSlice = createSlice({
   }
 });
 
-export const { selectLine, updateFilter } = linesSlice.actions;
+export const { selectLine, updateFilter, selectRoute } = linesSlice.actions;
 
 export default linesSlice.reducer;

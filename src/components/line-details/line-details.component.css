@@ -1,0 +1,59 @@
+.line-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  /* align-items: center; */
+  max-width: fit-content;
+  padding: 1em 2em;
+}
+
+/* table styling */
+table {
+  margin-top: 2em;
+  border-collapse: collapse;
+  /* width: 100%; */
+}
+
+thead {
+  background-color: indigo;
+  color: lavender;
+}
+
+th,
+td {
+  text-align: left;
+  padding-left: 2em;
+  /* padding-right: 2em; */
+  white-space: nowrap;
+  position: relative;
+}
+
+tr:not(:first-child) {
+  border-top: 1px solid indigo;
+}
+
+/* tbody > tr:hover {
+  background-color: gainsboro;
+} */
+
+table:first-child > tr {
+  border: none;
+}
+
+.custom-select {
+  border: none;
+  outline: none;
+  border-radius: none;
+  border-bottom: solid 2px indigo;
+  box-sizing: border-box;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  height: 2em;
+}
+
+.custom-select:hover {
+  cursor: pointer;
+  background-color: lavender;
+}
