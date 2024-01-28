@@ -1,4 +1,10 @@
 .lines-panel {
+  position: absolute;
+  z-index: 10000;
+  background-color: white;
+  border-radius: 1em;
+  top: 3.6em;
+  box-shadow: 2px 2px 12px 6px gray;
   display: flex;
   flex-direction: column;
   gap: 1em;

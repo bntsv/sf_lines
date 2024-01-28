@@ -19,7 +19,7 @@ function LineDetails() {
 
   const renderRouteStopsTable = (route) => (
     <div className="table-wrap">
-      <table cellPadding="10" className="hidden">
+      <table cellPadding="10">
         <thead>
           <tr>
             <th scope="col">Stop name</th>
@@ -39,24 +39,18 @@ function LineDetails() {
           })}
         </tbody>
       </table>
-      {/* <p class="table-empty-state">
-          You haven't added any contacts yet! <br />
-          You can add a contact using the form above.
-        </p> */}
     </div>
   );
 
   return (
-    <div className="line-details layout-container">
+    <div className="line-details">
       <h2>{selectedLine?.line}</h2>
 
       {/* <label htmlFor="routeSelect">Choose route: </label> */}
-      {/* <div className="custom-select" style={{ width: '200px' }}> */}
       <select name="route" id="routeSelect" className="custom-select" onChange={handleChange}>
         <option value={selectedLine?.routes[0].name}>{selectedLine?.routes[0].name}</option>
         <option value={selectedLine?.routes[1].name}>{selectedLine?.routes[1].name}</option>
       </select>
-      {/* </div> */}
 
       {renderRouteStopsTable(selectedRoute ? selectedRoute : selectedLine?.routes[0])}
     </div>

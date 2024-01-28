@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <header>
-        <h1 className="logo">S</h1>
+        <div className="logo">S</div>
         <Navbar />
       </header>
       <main>
