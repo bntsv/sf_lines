@@ -21,7 +21,15 @@ function LinesList() {
                 dispatch(selectLine(l));
               }}
             >
-              <Link to={line}>{line}</Link>
+              <Link to={line}>
+                <div className="line-card">
+                  <h5>{line}</h5>
+                  <div className="line-routes">
+                    <span>{l.routes[0].name}</span>
+                    <span>{l.routes[1].name}</span>
+                  </div>
+                </div>
+              </Link>
             </li>
           );
         })}

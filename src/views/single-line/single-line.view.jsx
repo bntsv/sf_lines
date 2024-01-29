@@ -1,4 +1,3 @@
-import './single-line.view.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRoute } from '../../features/lines/linesSlice';
 import LineDetails from '../../components/line-details/line-details.component';
@@ -13,7 +12,7 @@ function SingleLine() {
   };
 
   return (
-    <div className="single-line-view">
+    <div className="display-flex single-line-view">
       <LineDetails />
       <LineMap selectedLine={selectedLine} clickSegment={clickRoute} />
     </div>

@@ -11,13 +11,13 @@ code {
 
 @media only screen and (max-width: 600px) {
   /* TODO: move to respective css files so to avoid use of important */
-  select {
-    font-size: 0.7em !important;
-  }
-
   header {
     padding: 0 !important;
     justify-content: space-between;
+  }
+
+  select {
+    font-size: 0.7em !important;
   }
 
   .table-wrap {
@@ -25,12 +25,19 @@ code {
     overflow-x: auto;
   }
 
-  .line-details {
+  .line-details,
+  .lines-panel {
     max-width: 100vw;
     min-width: initial !important;
+    padding: 2em !important;
   }
 
-  .single-line-view {
+  .lines-panel {
+    max-height: fit-content !important;
+  }
+
+  .single-line-view,
+  .home-view {
     flex-direction: column;
   }
 }

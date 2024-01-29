@@ -68,7 +68,7 @@ const linesSlice = createSlice({
     builder.addCase(fetchLineData.fulfilled, (state, action) => {
       console.log('Line data received');
       state.selectedLine = action.payload;
-      state.selectedRoute = action.payload.routes[0];
+      state.selectedRoute = action.payload?.routes[0];
 
       //   if (!localStorage.getItem('selectedLine')) {
       //     localStorage.setItem('selectedLine', JSON.stringify(action.payload));

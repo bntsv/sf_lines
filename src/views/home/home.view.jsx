@@ -25,10 +25,10 @@ function Home() {
   }, [linesFilter]);
 
   return (
-    <>
+    <div className="display-flex home-view">
       <LinesPanel />
       <LineMap clickStop={gotToLine} />
-    </>
+    </div>
   );
 }
 

@@ -3,18 +3,47 @@
   margin: 0;
   list-style-type: none;
   min-height: 12em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .lines a {
   display: block;
   text-decoration: none;
-  padding: 0.5em;
+  /* border-radius: 0.3em; */
+  box-sizing: border-box;
 }
 
 .lines a:hover {
   background-color: lavender;
+  box-shadow: 1px 1px 3px 0px #00000070;
 }
 
 .lines a:active {
   color: indigo;
+}
+
+.line-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border: solid 1px gainsboro;
+  padding: 0.5em;
+  /* border-radius: 0.3em; */
+  box-sizing: border-box;
+}
+
+.line-card:hover {
+  border-color: transparent;
+}
+
+.line-routes {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.6em;
+}
+
+.line-card > h5 {
+  margin: 0;
 }

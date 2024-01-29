@@ -1,7 +1,6 @@
 .filter-checkboxes {
   justify-content: flex-start;
   flex-direction: column;
-  /* margin-top: 1em; */
 }
 
 .filter-checkbox {
@@ -25,9 +24,8 @@
   padding-left: 0.5em;
   white-space: nowrap;
   min-width: 6em;
-  /* width: 100%; */
   align-self: flex-start;
-  color: gray;
+  color: #00000080;
 }
 
 .filter-checkbox > label:hover,

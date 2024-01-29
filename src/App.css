@@ -22,9 +22,6 @@ header {
   box-sizing: border-box;
 }
 
-.layout-container {
-  border: solid 1px indigo;
-  box-sizing: border-box;
-  margin: 1em;
-  padding: 1em;
+.display-flex {
+  display: flex;
 }
