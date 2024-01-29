@@ -1,5 +1,4 @@
 import './line-details.component.css';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRoute } from '../../features/lines/linesSlice';
 
@@ -9,13 +8,9 @@ function LineDetails() {
 
   const handleChange = (e) => {
     const selectedRoute = selectedLine.routes.find((r) => r.name === e.target.value);
-    console.log(selectedRoute);
+
     dispatch(selectRoute(selectedRoute));
   };
-
-  useEffect(() => {
-    console.log(selectedLine);
-  });
 
   const renderRouteStopsTable = (route) => (
     <div className="table-wrap">
@@ -47,7 +42,7 @@ function LineDetails() {
       <h2>{selectedLine?.line}</h2>
 
       {/* <label htmlFor="routeSelect">Choose route: </label> */}
-      <select name="route" id="routeSelect" className="custom-select" onChange={handleChange}>
+      <select name="route" id="routeSelect" className="custom-select" value={selectedRoute?.name} onChange={handleChange}>
         <option value={selectedLine?.routes[0].name}>{selectedLine?.routes[0].name}</option>
         <option value={selectedLine?.routes[1].name}>{selectedLine?.routes[1].name}</option>
       </select>

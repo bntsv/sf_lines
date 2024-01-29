@@ -6,12 +6,12 @@ import { getLineData, getLinesData } from '../../api/api';
 
 const initialState = {
   lines: [],
+  filteredLines: [],
   selectedLine: null,
   linesFilter: [],
   selectedRoute: null,
   isLoading: false,
   error: false
-  // getDefaultSelectedRoute: () => this.selectedLine?.routes[0]
 };
 
 export const fetchLinesData = createAsyncThunk('lines/fetchLinesData', async () => {
@@ -32,9 +32,13 @@ const linesSlice = createSlice({
   reducers: {
     selectLine: (state, action) => {
       state.selectedLine = action.payload;
+      state.selectedRoute = action.payload.routes[0];
     },
     updateFilter: (state, action) => {
       state.linesFilter = action.payload;
+    },
+    updateFilteredLines: (state, action) => {
+      state.filteredLines = action.payload;
     },
     selectRoute: (state, action) => {
       state.selectedRoute = action.payload;
@@ -64,6 +68,7 @@ const linesSlice = createSlice({
     builder.addCase(fetchLineData.fulfilled, (state, action) => {
       console.log('Line data received');
       state.selectedLine = action.payload;
+      state.selectedRoute = action.payload.routes[0];
 
       //   if (!localStorage.getItem('selectedLine')) {
       //     localStorage.setItem('selectedLine', JSON.stringify(action.payload));
@@ -76,6 +81,6 @@ const linesSlice = createSlice({
   }
 });
 
-export const { selectLine, updateFilter, selectRoute } = linesSlice.actions;
+export const { selectLine, updateFilter, updateFilteredLines, selectRoute } = linesSlice.actions;
 
 export default linesSlice.reducer;
