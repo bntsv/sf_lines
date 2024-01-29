@@ -9,7 +9,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   /* TODO: move to respective css files so to avoid use of important */
   header {
     padding: 0 !important;
